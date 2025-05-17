@@ -41,6 +41,7 @@ This project is a Flask-based web application that predicts the **cancer stage**
   <img src="Images/18.png" alt="" width="600">
   <img src="Images/19.png" alt="" width="600">
   <img src="Images/20.png" alt="" width="600">
+  <img src="Images/app.png" alt="" width="600">
 </p>
 
 ## 🗃️ Dataset
