@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+env/
+venv/
+ENV/
+*.env
+
+# macOS system files
+.DS_Store
+
+# VSCode and other IDE settings
+.vscode/
+.idea/
+
+# Flask cache
+instance/
+*.log
+
+# Model and dataset files
+*.pkl

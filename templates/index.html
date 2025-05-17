@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Stage Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cancer Stage Prediction</h1>
+        <form id="prediction-form" action="/predict" method="post">
+            <label for="Age">Age:</label>
+            <input type="number" id="Age" name="Age" step="1" min="0" max="120" required>
+
+            <label for="Genetic_Risk">Genetic Risk (0-10):</label>
+            <input type="number" id="Genetic_Risk" name="Genetic_Risk" step="0.1" min="0" max="10" required>
+
+            <label for="Air_Pollution">Air Pollution (0-10):</label>
+            <input type="number" id="Air_Pollution" name="Air_Pollution" step="0.1" min="0" max="10" required>
+
+            <label for="Alcohol_Use">Alcohol Use (0-10):</label>
+            <input type="number" id="Alcohol_Use" name="Alcohol_Use" step="0.1" min="0" max="10" required>
+
+            <label for="Smoking">Smoking (0-10):</label>
+            <input type="number" id="Smoking" name="Smoking" step="0.1" min="0" max="10" required>
+
+            <label for="Obesity_Level">Obesity Level (0-10):</label>
+            <input type="number" id="Obesity_Level" name="Obesity_Level" step="0.1" min="0" max="10" required>
+
+            <label for="Treatment_Cost_USD">Treatment Cost (USD):</label>
+            <input type="number" id="Treatment_Cost_USD" name="Treatment_Cost_USD" step="0.01" min="0" required>
+
+            <label for="Gender">Gender:</label>
+            <select id="Gender" name="Gender" required>
+                {% for gender in genders %}
+                <option value="{{ gender }}">{{ gender }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="Country_Region">Country/Region:</label>
+            <select id="Country_Region" name="Country_Region" required>
+                {% for country in countries %}
+                <option value="{{ country }}">{{ country }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="Cancer_Type">Cancer Type:</label>
+            <select id="Cancer_Type" name="Cancer_Type" required>
+                {% for cancer_type in cancer_types %}
+                <option value="{{ cancer_type }}">{{ cancer_type }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="Target_Severity_Score">Target Severity Score:</label>
+            <select id="Target_Severity_Score" name="Target_Severity_Score" required>
+                {% for score in severity_scores %}
+                <option value="{{ score }}">{{ score }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
